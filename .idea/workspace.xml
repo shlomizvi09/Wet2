@@ -1,11 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="Wet2" targetName="Wet2" />
+    </generated>
+  </component>
   <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c55c58bd-1e6d-4be1-94ce-3b28ec5cb177" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Wet2.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Wet2.cbp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ctxxNtZFp4PGjVJEBNxL3FA0YM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$USER_HOME$/Technion/semester_3/Introduction to System's Programing/Homework/ex3" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../semester_3/Introduction to System's Programing/Homework/ex3" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Wet2" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Wet2" TARGET_NAME="Wet2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Wet2" RUN_TARGET_NAME="Wet2">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c55c58bd-1e6d-4be1-94ce-3b28ec5cb177" name="Default Changelist" comment="" />
+      <created>1591361937469</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591361937469</updated>
+      <workItem from="1591361946630" duration="781000" />
+      <workItem from="1591461081466" duration="618000" />
+      <workItem from="1591803080684" duration="1149000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1660" y="160" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591361975130">
+      <screen x="1366" y="0" width="1680" height="1010" />
+    </state>
+    <state x="1660" y="160" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.0.1680.1010@1366.0.1680.1010" timestamp="1591361975130" />
+    <state x="2084" y="403" key="Github.ShareDialog" timestamp="1591362127244">
+      <screen x="1366" y="0" width="1680" height="1010" />
+    </state>
+    <state x="2084" y="403" key="Github.ShareDialog/0.0.1366.728/1366.0.1680.1010@1366.0.1680.1010" timestamp="1591362127244" />
+    <state x="1957" y="207" key="Github.UntrackedFilesDialog" timestamp="1591362131587">
+      <screen x="1366" y="0" width="1680" height="1010" />
+    </state>
+    <state x="1957" y="207" key="Github.UntrackedFilesDialog/0.0.1366.728/1366.0.1680.1010@1366.0.1680.1010" timestamp="1591362131587" />
+    <state width="1637" height="272" key="GridCell.Tab.0.bottom" timestamp="1591372297702">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1637" height="272" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1680.1010@1366.0.1680.1010" timestamp="1591361999607" />
+    <state width="1637" height="272" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591372297702" />
+    <state width="1637" height="272" key="GridCell.Tab.0.center" timestamp="1591372297701">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1637" height="272" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1680.1010@1366.0.1680.1010" timestamp="1591361999606" />
+    <state width="1637" height="272" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591372297701" />
+    <state width="1637" height="272" key="GridCell.Tab.0.left" timestamp="1591372297701">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1637" height="272" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1680.1010@1366.0.1680.1010" timestamp="1591361999606" />
+    <state width="1637" height="272" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591372297701" />
+    <state width="1637" height="272" key="GridCell.Tab.0.right" timestamp="1591372297702">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1637" height="272" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1680.1010@1366.0.1680.1010" timestamp="1591361999606" />
+    <state width="1637" height="272" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591372297702" />
   </component>
 </project>
