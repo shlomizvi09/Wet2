@@ -246,6 +246,8 @@ class AVLRankTree {
 
   int getSize();
 
+  int getRank(Key key);
+
 };
 
 /*        IMPLEMENTATION        */
@@ -355,6 +357,7 @@ void AVLRankTree<Key, Data>::swapBetweenNodes(TreeNode<Key, Data> *first_node,
   }
   TreeNode<Key, Data> *temp_node1;
   TreeNode<Key, Data> *temp_node2;
+  int temp_num_of_subnodes = 0;
 
   // checking if the nodes are consecutive, and which one is first
   if ((second_node->rightSon != nullptr
@@ -367,6 +370,9 @@ void AVLRankTree<Key, Data>::swapBetweenNodes(TreeNode<Key, Data> *first_node,
   }
   if (first_node->rightSon != nullptr
       && first_node->rightSon->key == second_node->key) {
+    temp_num_of_subnodes = first_node->num_of_subnodes;
+    first_node->num_of_subnodes = second_node->num_of_subnodes;
+    second_node->num_of_subnodes = temp_num_of_subnodes;
     temp_node1 = first_node->parent;
     first_node->parent = second_node;
     second_node->parent = temp_node1;
@@ -378,6 +384,9 @@ void AVLRankTree<Key, Data>::swapBetweenNodes(TreeNode<Key, Data> *first_node,
     first_node->leftSon = temp_node2;
   } else if (first_node->leftSon != nullptr
       && first_node->leftSon->key == second_node->key) {
+    temp_num_of_subnodes = first_node->num_of_subnodes;
+    first_node->num_of_subnodes = second_node->num_of_subnodes;
+    second_node->num_of_subnodes = temp_num_of_subnodes;
     temp_node1 = first_node->parent;
     first_node->parent = second_node;
     second_node->parent = temp_node1;
@@ -388,6 +397,9 @@ void AVLRankTree<Key, Data>::swapBetweenNodes(TreeNode<Key, Data> *first_node,
     first_node->rightSon = temp_node1;
     first_node->leftSon = temp_node2;
   } else {
+    temp_num_of_subnodes = first_node->num_of_subnodes;
+    first_node->num_of_subnodes = second_node->num_of_subnodes;
+    second_node->num_of_subnodes = temp_num_of_subnodes;
     temp_node1 = first_node->parent;
     first_node->setParent(second_node->parent);
     second_node->setParent(temp_node1);
@@ -534,12 +546,13 @@ AVLRankTreeResult AVLRankTree<Key, Data>::internalAdd(TreeNode<Key, Data> **root
       (*root)->setLeftSon(new_node);
       new_node->setParent(*root);
       updateTreeNodeHeight(*root);
+      updateRank(*root);
       return AVL_SUCCESS;
     }
     result = internalAdd(&((*root)->leftSon), new_node);
     updateTreeNodeHeight(*root);
     if (result == AVL_SUCCESS) {
-      (*root)->leftSon->num_of_subnodes++;
+      updateRank(*root);
     }
     *root = AVLRankTreeBalance(*root);
     return result;
@@ -549,12 +562,13 @@ AVLRankTreeResult AVLRankTree<Key, Data>::internalAdd(TreeNode<Key, Data> **root
     (*root)->setRightSon(new_node);
     new_node->setParent(*root);
     updateTreeNodeHeight(*root);
+    updateRank(*root);
     return AVL_SUCCESS;
   }
   result = internalAdd(&((*root)->rightSon), new_node);
   updateTreeNodeHeight(*root);
   if (result == AVL_SUCCESS) {
-    (*root)->rightSon->num_of_subnodes++;
+    updateRank(*root);
   }
   *root = AVLRankTreeBalance(*root);
   return result;
@@ -569,10 +583,12 @@ AVLRankTreeResult AVLRankTree<Key, Data>::internalRemove(TreeNode<Key,
   if (curr_key == key) {
     deleteTreeNode(tree_node, *tree_node);
   } else if (curr_key > key) {
+    (*tree_node)->num_of_subnodes--;
     internalRemove(&((*tree_node)->leftSon), key);
     updateTreeNodeHeight((*tree_node));
     *tree_node = AVLRankTreeBalance((*tree_node));
   } else {
+    (*tree_node)->num_of_subnodes--;
     internalRemove(&((*tree_node)->rightSon), key);
     updateTreeNodeHeight((*tree_node));
     *tree_node = AVLRankTreeBalance((*tree_node));
@@ -623,6 +639,7 @@ void AVLRankTree<Key, Data>::deleteNodesWithTwoSons(TreeNode<Key,
     new_tree_node = new_tree_node->leftSon;
   }
   swapBetweenNodes((*tree_node), new_tree_node);
+  new_tree_node->num_of_subnodes--;
   TreeNode<Key, Data> **subtree_root = &(new_tree_node->rightSon);
   internalRemove(subtree_root, key);
   updateTreeNodeHeight(new_tree_node);
@@ -664,12 +681,13 @@ AVLRankTreeResult AVLRankTree<Key, Data>::add(Key key, Data data) {
     this->size++;
     return AVL_SUCCESS;
   }
+  int old_root_subnodes = this->root->num_of_subnodes;
   if (internalAdd(&(this->root), tree_node) == AVL_KeyAlreadyExists) {
     delete tree_node;
     return AVL_KeyAlreadyExists;
   }
   this->size++;
-  this->root->num_of_subnodes++;
+  updateRank(this->root);
   return AVL_SUCCESS;
 }
 
@@ -678,8 +696,12 @@ AVLRankTreeResult AVLRankTree<Key, Data>::remove(Key &key) {
   if (this->root == nullptr) {
     return AVL_KeyNotFound;
   }
-  AVLRankTreeResult tmpResult;
-  tmpResult = internalRemove(&(this->root), key);
+  TreeNode<Key, Data> *temp_ptr = findNodeInTree(key, this->root);
+  if (temp_ptr == nullptr) {
+    return AVL_KeyNotFound;
+  }
+  //if we got here, the key must be in the tree
+  AVLRankTreeResult tmpResult = internalRemove(&(this->root), key);
   if (tmpResult == AVL_SUCCESS)
     this->size--;
   return tmpResult;
@@ -751,6 +773,33 @@ bool AVLRankTree<Key, Data>::isEmpty() const {
 template<class Key, class Data>
 int AVLRankTree<Key, Data>::getSize() {
   return this->size;
+}
+
+template<class Key, class Data>
+int AVLRankTree<Key, Data>::getRank(Key key) {
+  TreeNode<Key, Data> *tree_node = this->root;
+  int rank = 0, height = tree_node->height;
+  while (height > 0) {
+    height--;
+    if (tree_node->key == key) {
+      break;
+    } else if (tree_node->key > key) {
+      tree_node = tree_node->leftSon;
+    } else {
+      rank++;
+      if (tree_node->leftSon != nullptr) {
+        rank += tree_node->leftSon->num_of_subnodes;
+        tree_node = tree_node->rightSon;
+      }
+    }
+  }
+  if (tree_node->key != key) {
+    return 0; // in case the key is not in the tree, 0 is an illegal rank
+  }
+  if (tree_node->leftSon == nullptr) {
+    return rank + 1;
+  }
+  return rank + tree_node->leftSon->num_of_subnodes + 1;
 }
 
 #endif //WET1__AVLRANKTREE_H_
