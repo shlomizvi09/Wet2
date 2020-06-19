@@ -83,6 +83,21 @@
 		<Unit filename="F:/Technion/mivne/HW2/AVLRankTree.h">
 			<Option target="Wet2"/>
 		</Unit>
+		<Unit filename="F:/Technion/mivne/HW2/HashTable.h">
+			<Option target="Wet2"/>
+		</Unit>
+		<Unit filename="F:/Technion/mivne/HW2/MusicManager.cpp">
+			<Option target="Wet2"/>
+		</Unit>
+		<Unit filename="F:/Technion/mivne/HW2/MusicManager.h">
+			<Option target="Wet2"/>
+		</Unit>
+		<Unit filename="F:/Technion/mivne/HW2/library2.cpp">
+			<Option target="Wet2"/>
+		</Unit>
+		<Unit filename="F:/Technion/mivne/HW2/library2.h">
+			<Option target="Wet2"/>
+		</Unit>
 		<Unit filename="F:/Technion/mivne/HW2/main.cpp">
 			<Option target="Wet2"/>
 		</Unit>

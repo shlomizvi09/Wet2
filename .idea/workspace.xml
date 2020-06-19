@@ -12,12 +12,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c55c58bd-1e6d-4be1-94ce-3b28ec5cb177" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/MusicManager.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library2.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library2.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AVLRankTree.h" beforeDir="false" afterPath="$PROJECT_DIR$/AVLRankTree.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Wet2.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Wet2.dir/main.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Wet2.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Wet2.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AVLTree.h" beforeDir="false" afterPath="$PROJECT_DIR$/AVLTree.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HashTable.h" beforeDir="false" afterPath="$PROJECT_DIR$/HashTable.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/MusicManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Wet2.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Wet2.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Wet2.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Wet2.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Wet2.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Wet2.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Wet2.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Wet2.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Wet2.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Wet2.dir/objects1.rsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Wet2.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Wet2.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Wet2.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Wet2.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Wet2.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Wet2.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +53,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../semester_3/Introduction to System's Programing/Homework/ex3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/CMakeLists.txt" />
   </component>
   <component name="RunManager">
     <configuration name="Wet2" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Wet2" TARGET_NAME="Wet2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Wet2" RUN_TARGET_NAME="Wet2">
@@ -66,6 +84,7 @@
       <workItem from="1592251500565" duration="3346000" />
       <workItem from="1592306546923" duration="9654000" />
       <workItem from="1592482906509" duration="11933000" />
+      <workItem from="1592550483067" duration="5223000" />
     </task>
     <task id="LOCAL‎00001" summary="started working on AVLRankTree">
       <created>1591805046575</created>
@@ -79,7 +98,14 @@
       <option name="presentableId" value="LOCAL‎00002" />
       <updated>1592256635128</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="need to fix the ranks update when rotating">
+      <created>1592551724037</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1592551724037</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,10 +121,15 @@
       <screen x="1366" y="0" width="1680" height="1010" />
     </state>
     <state x="1660" y="160" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.0.1680.1010@1366.0.1680.1010" timestamp="1591361975130" />
-    <state x="291" y="0" key="CommitChangelistDialog2" timestamp="1592256632970">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="-1007" y="-173" key="CommitChangelistDialog2" timestamp="1592551721984">
+      <screen x="-1280" y="-173" width="1280" height="984" />
     </state>
+    <state x="-1007" y="-173" key="CommitChangelistDialog2/0.0.1366.728/-1280.-173.1280.984@-1280.-173.1280.984" timestamp="1592551721984" />
     <state x="291" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1592256632970" />
+    <state x="-860" y="74" key="FileChooserDialogImpl" timestamp="1592550538916">
+      <screen x="-1280" y="-173" width="1280" height="984" />
+    </state>
+    <state x="-860" y="74" key="FileChooserDialogImpl/0.0.1366.728/-1280.-173.1280.984@-1280.-173.1280.984" timestamp="1592550538916" />
     <state x="2084" y="403" key="Github.ShareDialog" timestamp="1591362127244">
       <screen x="1366" y="0" width="1680" height="1010" />
     </state>
@@ -155,13 +186,15 @@
     <state width="1323" height="336" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1680.1010@0.0.1366.728" timestamp="1592151751117" />
     <state width="1637" height="352" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1680.1010@1366.0.1680.1010" timestamp="1592515580496" />
     <state width="1323" height="282" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1592256651810" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1592256637231">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="-1022" y="-42" key="Vcs.Push.Dialog.v2" timestamp="1592551736231">
+      <screen x="-1280" y="-173" width="1280" height="984" />
     </state>
+    <state x="-1022" y="-42" key="Vcs.Push.Dialog.v2/0.0.1366.728/-1280.-173.1280.984@-1280.-173.1280.984" timestamp="1592551736231" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1592256637231" />
-    <state x="2015" y="419" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592496216257">
-      <screen x="1366" y="0" width="1680" height="1010" />
+    <state x="-786" y="235" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592551670794">
+      <screen x="-1280" y="-173" width="1280" height="984" />
     </state>
+    <state x="-786" y="235" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/-1280.-173.1280.984@-1280.-173.1280.984" timestamp="1592551670794" />
     <state x="2015" y="419" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/1366.0.1680.1010@1366.0.1680.1010" timestamp="1592496216257" />
     <state x="0" y="104" width="1382" height="596" maximized="true" key="dock-window-1" timestamp="1592515164257">
       <screen x="0" y="0" width="1366" height="728" />
@@ -177,9 +210,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>9</line>
-          <option name="timeStamp" value="20" />
+          <url>file://$PROJECT_DIR$/AVLRankTree.h</url>
+          <line>11</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

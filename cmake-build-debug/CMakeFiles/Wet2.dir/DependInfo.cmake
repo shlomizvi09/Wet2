@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "F:/Technion/mivne/HW2/MusicManager.cpp" "F:/Technion/mivne/HW2/cmake-build-debug/CMakeFiles/Wet2.dir/MusicManager.cpp.obj"
+  "F:/Technion/mivne/HW2/library2.cpp" "F:/Technion/mivne/HW2/cmake-build-debug/CMakeFiles/Wet2.dir/library2.cpp.obj"
   "F:/Technion/mivne/HW2/main.cpp" "F:/Technion/mivne/HW2/cmake-build-debug/CMakeFiles/Wet2.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

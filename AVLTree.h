@@ -166,7 +166,7 @@ typedef enum AVLTreeOrderKind {
 } AVLTreeOrderKind;
 
 template<class Key, class Data>
-class AVLTree {
+class AVLRankTree {
   TreeNode<Key, Data> *root;
 
   int size;
@@ -215,9 +215,9 @@ class AVLTree {
   void deleteNodesWithTwoSons(TreeNode<Key, Data> **tree_node);
 
  public:
-  AVLTree();
+  AVLRankTree();
 
-  ~AVLTree();
+  ~AVLRankTree();
 
   AVLTreeResult searchData(const Key &key, Data **data);
 
@@ -248,7 +248,7 @@ class AVLTree {
  */
 
 template<class Key, class Data>
-void AVLTree<Key, Data>::setRoot(TreeNode<Key, Data> *tree_node) {
+void AVLRankTree<Key, Data>::setRoot(TreeNode<Key, Data> *tree_node) {
   if (tree_node == nullptr) {
     return;
   }
@@ -256,7 +256,7 @@ void AVLTree<Key, Data>::setRoot(TreeNode<Key, Data> *tree_node) {
 }
 
 template<class Key, class Data>
-void AVLTree<Key, Data>::cleanTree(TreeNode<Key, Data> *tree_node) {
+void AVLRankTree<Key, Data>::cleanTree(TreeNode<Key, Data> *tree_node) {
   if (tree_node == nullptr) {
     return;
   }
@@ -274,7 +274,7 @@ void AVLTree<Key, Data>::cleanTree(TreeNode<Key, Data> *tree_node) {
 }
 
 template<class Key, class Data>
-void AVLTree<Key, Data>::printPreOrder(TreeNode<Key, Data> *tree_node) const {
+void AVLRankTree<Key, Data>::printPreOrder(TreeNode<Key, Data> *tree_node) const {
   if (tree_node == nullptr) return;
   tree_node->printKey();
   printPreOrder(tree_node->getLeftSon());
@@ -282,7 +282,7 @@ void AVLTree<Key, Data>::printPreOrder(TreeNode<Key, Data> *tree_node) const {
 }
 
 template<class Key, class Data>
-void AVLTree<Key, Data>::printInOrder(TreeNode<Key, Data> *tree_node) const {
+void AVLRankTree<Key, Data>::printInOrder(TreeNode<Key, Data> *tree_node) const {
   if (tree_node == nullptr) return;
   printInOrder(tree_node->getLeftSon());
   tree_node->printKey();
@@ -290,7 +290,7 @@ void AVLTree<Key, Data>::printInOrder(TreeNode<Key, Data> *tree_node) const {
 }
 
 template<class Key, class Data>
-void AVLTree<Key, Data>::printPostOrder(TreeNode<Key, Data> *tree_node) const {
+void AVLRankTree<Key, Data>::printPostOrder(TreeNode<Key, Data> *tree_node) const {
   if (tree_node == nullptr) return;
   printPostOrder(tree_node->getLeftSon());
   printPostOrder(tree_node->getRightSon());
@@ -298,7 +298,7 @@ void AVLTree<Key, Data>::printPostOrder(TreeNode<Key, Data> *tree_node) const {
 }
 
 template<class Key, class Data>
-AVLTreeResult AVLTree<Key, Data>::updateData(const Key &key, Data &data) {
+AVLTreeResult AVLRankTree<Key, Data>::updateData(const Key &key, Data &data) {
   TreeNode<Key, Data> *tree_node = findNodeInTree(key, this->root);
   if (tree_node == nullptr) {
     return AVL_KeyNotFound;
@@ -308,8 +308,8 @@ AVLTreeResult AVLTree<Key, Data>::updateData(const Key &key, Data &data) {
 }
 
 template<class Key, class Data>
-TreeNode<Key, Data> *AVLTree<Key, Data>::findNodeInTree(const Key &key,
-                                                        TreeNode<Key,
+TreeNode<Key, Data> *AVLRankTree<Key, Data>::findNodeInTree(const Key &key,
+                                                            TreeNode<Key,
                                                                  Data> *tree_node) {
   if (tree_node == nullptr) {
     return nullptr; //subtree ended and key wasn't found
@@ -329,7 +329,7 @@ TreeNode<Key, Data> *AVLTree<Key, Data>::findNodeInTree(const Key &key,
 }
 
 template<class Key, class Data>
-int AVLTree<Key, Data>::heightDifference(TreeNode<Key, Data> *tree_node) {
+int AVLRankTree<Key, Data>::heightDifference(TreeNode<Key, Data> *tree_node) {
   int left_height = EMPTY_HEIGHT, right_height = EMPTY_HEIGHT;
   if (tree_node->getRightSon() != nullptr) {
     right_height = tree_node->getRightSon()->getHeight();
@@ -341,8 +341,8 @@ int AVLTree<Key, Data>::heightDifference(TreeNode<Key, Data> *tree_node) {
 }
 
 template<class Key, class Data>
-void AVLTree<Key, Data>::swapBetweenNodes(TreeNode<Key, Data> *first_node,
-                                          TreeNode<Key, Data> *second_node) {
+void AVLRankTree<Key, Data>::swapBetweenNodes(TreeNode<Key, Data> *first_node,
+                                              TreeNode<Key, Data> *second_node) {
   if (first_node == nullptr || second_node == nullptr) {
     return;
   }
@@ -430,7 +430,7 @@ void AVLTree<Key, Data>::swapBetweenNodes(TreeNode<Key, Data> *first_node,
 }
 
 template<class Key, class Data>
-void AVLTree<Key, Data>::updateTreeNodeHeight(TreeNode<Key, Data> *tree_node) {
+void AVLRankTree<Key, Data>::updateTreeNodeHeight(TreeNode<Key, Data> *tree_node) {
   int left_height = EMPTY_HEIGHT, right_height = EMPTY_HEIGHT, new_height = 0;
   if (tree_node->leftSon != nullptr) {
     left_height = tree_node->leftSon->getHeight();
@@ -443,7 +443,7 @@ void AVLTree<Key, Data>::updateTreeNodeHeight(TreeNode<Key, Data> *tree_node) {
 }
 
 template<class Key, class Data>
-TreeNode<Key, Data> *AVLTree<Key, Data>::AVLTreeBalance(TreeNode<Key,
+TreeNode<Key, Data> *AVLRankTree<Key, Data>::AVLTreeBalance(TreeNode<Key,
                                                                  Data> *tree_node) {
   // now we need to sort the kind of imbalance, if exists
   if (heightDifference(tree_node) == NOT_BALANCED_L) {
@@ -467,8 +467,8 @@ TreeNode<Key, Data> *AVLTree<Key, Data>::AVLTreeBalance(TreeNode<Key,
 }
 
 template<class Key, class Data>
-TreeNode<Key, Data> *AVLTree<Key, Data>::LLrotation(TreeNode<Key, Data> *parent,
-                                                    TreeNode<Key, Data> *son) {
+TreeNode<Key, Data> *AVLRankTree<Key, Data>::LLrotation(TreeNode<Key, Data> *parent,
+                                                        TreeNode<Key, Data> *son) {
   parent->setLeftSon(son->rightSon);
   if (son->rightSon != nullptr) {
     son->rightSon->setParent(parent);
@@ -482,22 +482,22 @@ TreeNode<Key, Data> *AVLTree<Key, Data>::LLrotation(TreeNode<Key, Data> *parent,
 }
 
 template<class Key, class Data>
-TreeNode<Key, Data> *AVLTree<Key, Data>::LRrotation(TreeNode<Key, Data> *parent,
-                                                    TreeNode<Key, Data> *son) {
+TreeNode<Key, Data> *AVLRankTree<Key, Data>::LRrotation(TreeNode<Key, Data> *parent,
+                                                        TreeNode<Key, Data> *son) {
   parent->setLeftSon(RRrotation(son, son->rightSon));
   return LLrotation(parent, parent->leftSon);
 }
 
 template<class Key, class Data>
-TreeNode<Key, Data> *AVLTree<Key, Data>::RLrotation(TreeNode<Key, Data> *parent,
-                                                    TreeNode<Key, Data> *son) {
+TreeNode<Key, Data> *AVLRankTree<Key, Data>::RLrotation(TreeNode<Key, Data> *parent,
+                                                        TreeNode<Key, Data> *son) {
   parent->setRightSon(LLrotation(son, son->leftSon));
   return RRrotation(parent, parent->rightSon);
 }
 
 template<class Key, class Data>
-TreeNode<Key, Data> *AVLTree<Key, Data>::RRrotation(TreeNode<Key, Data> *parent,
-                                                    TreeNode<Key, Data> *son) {
+TreeNode<Key, Data> *AVLRankTree<Key, Data>::RRrotation(TreeNode<Key, Data> *parent,
+                                                        TreeNode<Key, Data> *son) {
   parent->setRightSon(son->leftSon);
   if (son->leftSon != nullptr) {
     son->leftSon->setParent(parent);
@@ -511,8 +511,8 @@ TreeNode<Key, Data> *AVLTree<Key, Data>::RRrotation(TreeNode<Key, Data> *parent,
 }
 
 template<class Key, class Data>
-AVLTreeResult AVLTree<Key, Data>::internalAdd(TreeNode<Key, Data> **root,
-                                              TreeNode<Key, Data> *new_node) {
+AVLTreeResult AVLRankTree<Key, Data>::internalAdd(TreeNode<Key, Data> **root,
+                                                  TreeNode<Key, Data> *new_node) {
   Key root_key = (*root)->key, new_node_key = new_node->key;
   AVLTreeResult result = AVL_SUCCESS; //unless we'll find out otherwise...
   if (root_key == new_node_key) {
@@ -544,9 +544,9 @@ AVLTreeResult AVLTree<Key, Data>::internalAdd(TreeNode<Key, Data> **root,
 }
 
 template<class Key, class Data>
-AVLTreeResult AVLTree<Key, Data>::internalRemove(TreeNode<Key,
+AVLTreeResult AVLRankTree<Key, Data>::internalRemove(TreeNode<Key,
                                                           Data> **tree_node,
-                                                 Key &key) {
+                                                     Key &key) {
   if ((*tree_node) == nullptr) return AVL_KeyNotFound;
   Key curr_key = (*tree_node)->key;
   if (curr_key == key) {
@@ -564,7 +564,7 @@ AVLTreeResult AVLTree<Key, Data>::internalRemove(TreeNode<Key,
 }
 
 template<class Key, class Data>
-AVLTreeResult AVLTree<Key, Data>::deleteTreeNode(TreeNode<Key,
+AVLTreeResult AVLRankTree<Key, Data>::deleteTreeNode(TreeNode<Key,
                                                           Data> **tree_node_ptr, TreeNode<Key,
                                                                                           Data> *tree_node) {
   TreeNode<Key, Data> *node_to_remove = tree_node;
@@ -596,7 +596,7 @@ AVLTreeResult AVLTree<Key, Data>::deleteTreeNode(TreeNode<Key,
 }
 
 template<class Key, class Data>
-void AVLTree<Key, Data>::deleteNodesWithTwoSons(TreeNode<Key,
+void AVLRankTree<Key, Data>::deleteNodesWithTwoSons(TreeNode<Key,
                                                          Data> **tree_node) {
   TreeNode<Key, Data> *new_tree_node;
   Key key = (*tree_node)->key;
@@ -616,17 +616,17 @@ void AVLTree<Key, Data>::deleteNodesWithTwoSons(TreeNode<Key,
  */
 
 template<class Key, class Data>
-AVLTree<Key, Data>::AVLTree():root(nullptr), size(0) {}
+AVLRankTree<Key, Data>::AVLRankTree():root(nullptr), size(0) {}
 
 template<class Key, class Data>
-AVLTree<Key, Data>::~AVLTree() {
+AVLRankTree<Key, Data>::~AVLRankTree() {
   if (root != nullptr) {
     cleanTree(root);
   }
 }
 
 template<class Key, class Data>
-AVLTreeResult AVLTree<Key, Data>::add(Key key, Data data) {
+AVLTreeResult AVLRankTree<Key, Data>::add(Key key, Data data) {
   TreeNode<Key, Data> *tree_node = new TreeNode<Key, Data>(key, data);
   if (this->root == nullptr) {
     this->root = tree_node;
@@ -643,7 +643,7 @@ AVLTreeResult AVLTree<Key, Data>::add(Key key, Data data) {
 }
 
 template<class Key, class Data>
-AVLTreeResult AVLTree<Key, Data>::remove(Key &key) {
+AVLTreeResult AVLRankTree<Key, Data>::remove(Key &key) {
   if (this->root == nullptr) {
     return AVL_KeyNotFound;
   }
@@ -655,7 +655,7 @@ AVLTreeResult AVLTree<Key, Data>::remove(Key &key) {
 }
 
 template<class Key, class Data>
-AVLTreeResult AVLTree<Key, Data>::searchData(const Key &key, Data **data) {
+AVLTreeResult AVLRankTree<Key, Data>::searchData(const Key &key, Data **data) {
   TreeNode<Key, Data> *tree_node = findNodeInTree(key, this->root);
   if (tree_node == nullptr) {
     *data = nullptr;
@@ -667,8 +667,8 @@ AVLTreeResult AVLTree<Key, Data>::searchData(const Key &key, Data **data) {
 }
 
 template<class Key, class Data>
-AVLTreeResult AVLTree<Key, Data>::searchNode(const Key &key,
-                                             TreeNode<Key, Data> **node) {
+AVLTreeResult AVLRankTree<Key, Data>::searchNode(const Key &key,
+                                                 TreeNode<Key, Data> **node) {
   *node = findNodeInTree(key, this->root);
   if (*node == nullptr) {
     return AVL_KeyNotFound;
@@ -677,7 +677,7 @@ AVLTreeResult AVLTree<Key, Data>::searchNode(const Key &key,
 }
 
 template<class Key, class Data>
-void AVLTree<Key, Data>::print(AVLTreeOrderKind print_order) const {
+void AVLRankTree<Key, Data>::print(AVLTreeOrderKind print_order) const {
   if (print_order == Pre) {
     printPreOrder(this->root);
     return;
@@ -693,7 +693,7 @@ void AVLTree<Key, Data>::print(AVLTreeOrderKind print_order) const {
 }
 
 template<class Key, class Data>
-TreeNode<Key, Data> *AVLTree<Key, Data>::getSmallest() {
+TreeNode<Key, Data> *AVLRankTree<Key, Data>::getSmallest() {
   if (this->root == nullptr) {
     return nullptr;
   }
@@ -705,12 +705,12 @@ TreeNode<Key, Data> *AVLTree<Key, Data>::getSmallest() {
 }
 
 template<class Key, class Data>
-TreeNode<Key, Data> *AVLTree<Key, Data>::getRoot() {
+TreeNode<Key, Data> *AVLRankTree<Key, Data>::getRoot() {
   return this->root;
 }
 
 template<class Key, class Data>
-bool AVLTree<Key, Data>::isEmpty() const {
+bool AVLRankTree<Key, Data>::isEmpty() const {
   if (this->root == nullptr) {
     return true;
   }
@@ -718,7 +718,7 @@ bool AVLTree<Key, Data>::isEmpty() const {
 }
 
 template<class Key, class Data>
-int AVLTree<Key, Data>::getSize() {
+int AVLRankTree<Key, Data>::getSize() {
   return this->size;
 }
 

@@ -34,12 +34,12 @@ template<class Key, class Data>
 class HashTable {
     int array_size;
     int size;
-    AVLTree<Key, Data> **trees;
+    AVLRankTree<Key, Data> **trees;
 public:
     HashTable() : array_size(11), size(0) {
-        trees = new AVLTree<Key, Data> *[array_size];
+        trees = new AVLRankTree<Key, Data> *[array_size];
         for (int i = 0; i < array_size; ++i) {
-            trees[i] = new AVLTree<Key, Data>();
+            trees[i] = new AVLRankTree<Key, Data>();
         }
     }
 
@@ -55,7 +55,7 @@ public:
 
     HashTableResult search(int x) {
         int tmp_cell = Hash(x, array_size);
-        AVLTree<Key, Data> *tmp_tree = trees[tmp_cell];
+        AVLRankTree<Key, Data> *tmp_tree = trees[tmp_cell];
         TreeNode<Key, Data> *tmp_node= nullptr;
         AVLTreeResult tmp_result = AVL_KeyNotFound;
         tmp_result=trees[tmp_cell]->searchNode(x,&tmp_node);
@@ -91,9 +91,9 @@ public:
     }
 
     HashTableResult rehash(int new_size){
-        AVLTree<Key,Data>** new_tree=new AVLTree<Key,Data>*[new_size];
+        AVLRankTree<Key,Data>** new_tree=new AVLRankTree<Key,Data>*[new_size];
         for (int i = 0; i < new_size; ++i) {
-            new_tree[i] = new AVLTree<Key, Data>();
+            new_tree[i] = new AVLRankTree<Key, Data>();
         }
         for (int i = 0; i <array_size ; ++i) {
             CopyTree(trees[i]->getRoot(),new_tree,new_size);
@@ -112,7 +112,7 @@ public:
         }
     }
 
-    void CopyTree(TreeNode<Key, Data> *root, AVLTree<Key, Data> **new_table, int new_size){
+    void CopyTree(TreeNode<Key, Data> *root, AVLRankTree<Key, Data> **new_table, int new_size){
         if(root== nullptr)
             return;
         CopyTree(root->getLeftSon(), new_table, new_size);

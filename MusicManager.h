@@ -7,6 +7,8 @@
 
 #include "HashTable.h"
 #include "AVLTree.h"
+#include "AVLRankTree.h"
+#include "library2.h"
 
 typedef enum MusicManagerResult {
     MM_SUCCESS,
@@ -22,23 +24,18 @@ class FirstTreeNodeData;
 
 class SecondTreeNodeData;
 
-class DegTreeNodeData;
+class ThirdTreeNodeData;
 
 class FirstTreeNodeData {
-    AVLTree<SecondTreeNodeData, SecondTreeNodeData *> *tree;
-    TreeNode<SecondTreeNodeData, SecondTreeNodeData *> *smallest;
+    AVLRankTree<SecondTreeNodeData, SecondTreeNodeData *> *tree;
 
 public:
-    FirstTreeNodeData() : tree(nullptr), smallest(nullptr) {};
+    FirstTreeNodeData() : tree(nullptr){};
 
     ~FirstTreeNodeData() = default;
 
-    AVLTree<SecondTreeNodeData, SecondTreeNodeData *> getData() {
+    AVLRankTree<SecondTreeNodeData, SecondTreeNodeData *> getData() {
         return *tree;
-    }
-
-    TreeNode<SecondTreeNodeData, SecondTreeNodeData *> getBestSong() {
-        return *smallest;
     }
 
 };
@@ -73,14 +70,14 @@ public:
     }
 };
 
-class DegTreeNodeData {
+class ThirdTreeNodeData {
     int plays;
     int singerID;
     int songID;
 public:
-    DegTreeNodeData(int plays, int singerID, int songID) : plays(plays), singerID(singerID), songID(songID) {};
+    ThirdTreeNodeData(int plays, int singerID, int songID) : plays(plays), singerID(singerID), songID(songID) {};
 
-    ~DegTreeNodeData() = default;
+    ~ThirdTreeNodeData() = default;
 
     int getPlays() const {
         return plays;
@@ -94,11 +91,11 @@ public:
         return songID;
     }
 
-    bool operator==(DegTreeNodeData other) const {
+    bool operator==(ThirdTreeNodeData other) const {
         return (this->plays == other.plays && this->singerID == other.singerID && this->songID == other.songID);
     }
 
-    bool operator<(DegTreeNodeData other) const {
+    bool operator<(ThirdTreeNodeData other) const {
         if (this->plays > other.plays)
             return true;
         if (this->plays == other.plays) {
@@ -109,6 +106,24 @@ public:
         }
     }
 };
+
+class MusicManager{
+    HashTable<int, FirstTreeNodeData*> *table;
+    AVLRankTree<ThirdTreeNodeData,ThirdTreeNodeData*> *deg_tree;
+public:
+    MusicManager(){
+        table = new HashTable<int, FirstTreeNodeData*>();
+        deg_tree = new AVLRankTree<ThirdTreeNodeData,ThirdTreeNodeData*>();
+    }
+
+    ~MusicManager(){
+        delete table;
+        delete deg_tree;
+    }
+
+
+};
+
 
 
 #endif //WET2_MUSICMANAGER_H
