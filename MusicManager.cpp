@@ -19,20 +19,33 @@ MusicManagerResult MusicManager::AddArtist(int artistID) {
 
 MusicManagerResult MusicManager::RemoveArtist(int artistID) {
     TreeNode<int, FirstTreeNodeData *> *tmp_node = nullptr;
-    HashTableResult tmp_result = table->search(artistID,&tmp_node);
-    if(tmp_result==HASH_DONT_EXIST)
+    HashTableResult tmp_result = table->search(artistID, &tmp_node);
+    if (tmp_result == HASH_DONT_EXIST)
         return MM_NOT_EXISTS;
     if (!(tmp_node->getData()->getAuxTree()->isEmpty()))
         return MM_FAIL;
-    delete tmp_node->getData()->getAuxTree();
-    delete tmp_node->getData()->getTree();
     delete tmp_node->getData();
     tmp_result = table->remove(artistID);
-    if(tmp_result==HASH_SUCCESS)
+    if (tmp_result == HASH_SUCCESS)
         return MM_SUCCESS;
     return MM_FAIL;
+}
 
-
-
+MusicManagerResult MusicManager::AddSong(int artistID, int songID) {
+    TreeNode<int, FirstTreeNodeData *> *tmp_node = nullptr;
+    HashTableResult tmp_result = table->search(artistID, &tmp_node);
+    if (tmp_result == HASH_DONT_EXIST)
+        return MM_NOT_EXISTS;
+    TreeNode<int, SecondTreeNodeData *> *tmp_node2 = nullptr;
+    AVLRankTreeResult tmp_tree_res = tmp_node->getData()->getAuxTree()->searchNode(songID, &tmp_node2);
+    if (tmp_tree_res == AVL_KeyAlreadyExists)
+        return MM_FAIL;
+    SecondTreeNodeData *tmp_data = new SecondTreeNodeData(0,songID);
+    SecondTreeNodeData *tmp_data_aux = new SecondTreeNodeData(0,songID);
+    ThirdTreeNodeData *third_tree_data = new ThirdTreeNodeData(0,artistID,songID);
+    tmp_node->getData()->getAuxTree()->add(songID,tmp_data_aux);
+    tmp_node->getData()->getTree()->add(*tmp_data,tmp_data);
+    deg_tree->add(*third_tree_data,third_tree_data);
+    return MM_SUCCESS;
 }
 
