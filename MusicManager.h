@@ -161,6 +161,19 @@ public:
 
     MusicManagerResult AddSong(int artistID, int songID);
 
+    MusicManagerResult RemoveSong(int artistID, int songID);
+
+    void DeleteMM();
+
+    void DeleteDegTreeData(TreeNode<ThirdTreeNodeData,ThirdTreeNodeData*> *root);
+
+    void DeleteSingerTreeData(TreeNode<SecondTreeNodeData, SecondTreeNodeData *> *root);
+
+    void DeleteSingerAuxTreeData(TreeNode<int, SecondTreeNodeData *> *root);
+
+    void PatrolSingersTree(TreeNode<int, FirstTreeNodeData *> *root);
+
+
 };
 
 #endif //WET2_MUSICMANAGER_H

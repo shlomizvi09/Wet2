@@ -27,13 +27,13 @@ StatusType AddArtist(void *DS, int artistID) {
     }
     if (tmpResult == MM_EXISTS)
         return FAILURE;
-    if(tmpResult==MM_SUCCESS)
+    if (tmpResult == MM_SUCCESS)
         return SUCCESS;
     return FAILURE;
 }
 
-StatusType RemoveArtist(void *DS, int artistID){
-    if(DS== nullptr || artistID<=0)
+StatusType RemoveArtist(void *DS, int artistID) {
+    if (DS == nullptr || artistID <= 0)
         return INVALID_INPUT;
     MusicManager *ds = (MusicManager *) DS;
     MusicManagerResult tmpResult;
@@ -46,8 +46,9 @@ StatusType RemoveArtist(void *DS, int artistID){
         return FAILURE;
     return SUCCESS;
 }
-StatusType AddSong(void *DS, int artistID, int songID){
-    if(songID<=0 || DS== nullptr || artistID<=0)
+
+StatusType AddSong(void *DS, int artistID, int songID) {
+    if (songID <= 0 || DS == nullptr || artistID <= 0)
         return INVALID_INPUT;
     MusicManager *ds = (MusicManager *) DS;
     MusicManagerResult tmpResult;
@@ -56,9 +57,33 @@ StatusType AddSong(void *DS, int artistID, int songID){
     } catch (std::bad_alloc &e) {
         return ALLOCATION_ERROR;
     }
-    if (tmpResult == MM_NOT_EXISTS ||tmpResult ==MM_FAIL)
+    if (tmpResult == MM_EXISTS || tmpResult == MM_FAIL)
         return FAILURE;
     return SUCCESS;
+}
+
+StatusType RemoveSong(void *DS, int artistID, int songID) {
+    if (songID <= 0 || DS == nullptr || artistID <= 0)
+        return INVALID_INPUT;
+    MusicManager *ds = (MusicManager *) DS;
+    MusicManagerResult tmpResult;
+    try {
+        tmpResult = ds->RemoveSong(artistID, songID);
+    } catch (std::bad_alloc &e) {
+        return ALLOCATION_ERROR;
+    }
+    if (tmpResult == MM_NOT_EXISTS || tmpResult == MM_FAIL)
+        return FAILURE;
+    return SUCCESS;
+}
+
+void Quit(void **DS) {
+    MusicManager *ds = (MusicManager *) *DS;
+    ds->DeleteMM();
+    delete ds;
+    *DS = nullptr;
+
+
 }
 
 

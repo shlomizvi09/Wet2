@@ -102,6 +102,14 @@ class HashTable {
 
   }
 
+  int getArraySize(){
+      return array_size;
+  }
+
+  AVLRankTree<Key, Data> **getArray(){
+      return trees;
+  }
+
   void printTable() {
     for (int i = 0; i < array_size; ++i) {
       trees[i]->print(In);
