@@ -49,12 +49,11 @@ public:
     }
 
 
-    HashTableResult search(int x) {
+    HashTableResult search(int x,TreeNode<Key,Data> **node) {
         int tmp_cell = HashFunc(x, array_size);
         AVLRankTree<Key, Data> *tmp_tree = trees[tmp_cell];
-        TreeNode<Key, Data> *tmp_node= nullptr;
         AVLRankTreeResult tmp_result = AVL_KeyNotFound;
-        tmp_result=trees[tmp_cell]->searchNode(x,&tmp_node);
+        tmp_result=trees[tmp_cell]->searchNode(x,&node);
         if(tmp_result==AVL_SUCCESS)
             return HASH_ALREADY_EXIST;
         return HASH_DONT_EXIST;
@@ -62,7 +61,8 @@ public:
 
     HashTableResult insert(int x, Data data) {
         HashTableResult tmp_result = HASH_FAILURE;
-        tmp_result=search(x);
+        TreeNode<Key,Data> **tmp_node = nullptr;
+        tmp_result=search(x,tmp_node);
         if(tmp_result==HASH_ALREADY_EXIST)
             return HASH_ALREADY_EXIST;
         int tmp_cell = HashFunc(x, array_size);
@@ -75,7 +75,8 @@ public:
 
     HashTableResult remove(int x){
         HashTableResult tmp_result = HASH_FAILURE;
-        tmp_result=search(x);
+        TreeNode<Key,Data> *node= nullptr;
+        tmp_result=search(x,node);
         if(tmp_result==HASH_DONT_EXIST)
             return HASH_DONT_EXIST;
         int tmp_cell = HashFunc(x, array_size);

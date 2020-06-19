@@ -20,6 +20,7 @@ int main() {
   void *music_manager = Init();
   MusicManager *ds = (MusicManager*)music_manager;
   AddArtist(music_manager,111);
+  RemoveArtist(music_manager,111);
 
   return 0;
 }

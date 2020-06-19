@@ -126,6 +126,9 @@ public:
 
     MusicManagerResult AddArtist(int artistID);
 
+    MusicManagerResult RemoveArtist(int artistID);
+
+
 
 };
 
