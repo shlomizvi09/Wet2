@@ -149,33 +149,6 @@ MusicManager.cpp.s:
 	$(MAKE) -f CMakeFiles\Wet2.dir\build.make CMakeFiles/Wet2.dir/MusicManager.cpp.s
 .PHONY : MusicManager.cpp.s
 
-library2.obj: library2.cpp.obj
-
-.PHONY : library2.obj
-
-# target to build an object file
-library2.cpp.obj:
-	$(MAKE) -f CMakeFiles\Wet2.dir\build.make CMakeFiles/Wet2.dir/library2.cpp.obj
-.PHONY : library2.cpp.obj
-
-library2.i: library2.cpp.i
-
-.PHONY : library2.i
-
-# target to preprocess a source file
-library2.cpp.i:
-	$(MAKE) -f CMakeFiles\Wet2.dir\build.make CMakeFiles/Wet2.dir/library2.cpp.i
-.PHONY : library2.cpp.i
-
-library2.s: library2.cpp.s
-
-.PHONY : library2.s
-
-# target to generate assembly for a file
-library2.cpp.s:
-	$(MAKE) -f CMakeFiles\Wet2.dir\build.make CMakeFiles/Wet2.dir/library2.cpp.s
-.PHONY : library2.cpp.s
-
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -215,9 +188,6 @@ help:
 	@echo ... MusicManager.obj
 	@echo ... MusicManager.i
 	@echo ... MusicManager.s
-	@echo ... library2.obj
-	@echo ... library2.i
-	@echo ... library2.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

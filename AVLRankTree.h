@@ -170,7 +170,10 @@ typedef enum AVLRankTreeOrderKind {
 
 template<class Key, class Data>
 class AVLRankTree {
+
   TreeNode<Key, Data> *root;
+
+  TreeNode<Key, Data> *smallest;
 
   int size;
 
@@ -219,6 +222,8 @@ class AVLRankTree {
   void deleteNodesWithTwoSons(TreeNode<Key, Data> **tree_node);
 
   void updateRank(TreeNode<Key, Data> *tree_node);
+
+  void updateSmallest();
 
  public:
 
@@ -660,12 +665,17 @@ void AVLRankTree<Key, Data>::updateRank(TreeNode<Key, Data> *tree_node) {
   tree_node->num_of_subnodes = left_son + right_son + 1;
 }
 
+template<class Key, class Data>
+void AVLRankTree<Key, Data>::updateSmallest() {
+  this->smallest = this->getSmallest();
+}
+
 /*
  *      PUBLIC FUNCTIONS
  */
 
 template<class Key, class Data>
-AVLRankTree<Key, Data>::AVLRankTree():root(nullptr), size(0) {}
+AVLRankTree<Key, Data>::AVLRankTree():root(nullptr), size(0), smallest(nullptr) {}
 
 template<class Key, class Data>
 AVLRankTree<Key, Data>::~AVLRankTree() {
@@ -681,6 +691,7 @@ AVLRankTreeResult AVLRankTree<Key, Data>::add(Key key, Data data) {
     this->root = tree_node;
     tree_node->parent = nullptr;
     this->size++;
+    this->updateSmallest();
     return AVL_SUCCESS;
   }
   int old_root_subnodes = this->root->num_of_subnodes;
@@ -689,7 +700,8 @@ AVLRankTreeResult AVLRankTree<Key, Data>::add(Key key, Data data) {
     return AVL_KeyAlreadyExists;
   }
   this->size++;
-  updateRank(this->root);
+  this->updateRank(this->root);
+  this->updateSmallest();
   return AVL_SUCCESS;
 }
 
@@ -704,8 +716,10 @@ AVLRankTreeResult AVLRankTree<Key, Data>::remove(Key &key) {
   }
   //if we got here, the key must be in the tree
   AVLRankTreeResult tmpResult = internalRemove(&(this->root), key);
-  if (tmpResult == AVL_SUCCESS)
+  if (tmpResult == AVL_SUCCESS) {
+    this->updateSmallest();
     this->size--;
+  }
   return tmpResult;
 }
 

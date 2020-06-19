@@ -13,6 +13,7 @@ typedef enum MusicManagerResult {
   MM_SUCCESS,
   MM_EXISTS,
   MM_NOT_EXISTS,
+  MM_INVALID_INPUT,
   MM_NULL_ARGUMENT,
   MM_FAIL
 } MusicManagerResult;
@@ -106,6 +107,10 @@ class ThirdTreeNodeData {
     return songID;
   }
 
+  void addToPlays(int count) {
+    this->plays += count;
+  }
+
   bool operator==(ThirdTreeNodeData other) const {
     return (this->plays == other.plays && this->singerID == other.singerID
         && this->songID == other.songID);
@@ -138,6 +143,8 @@ class MusicManager {
   }
 
   MusicManagerResult AddArtist(int artistID);
+
+  MusicManagerResult AddToSongCount(int artistID, int songID, int count);
 
 };
 
