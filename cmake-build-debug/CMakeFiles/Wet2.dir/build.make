@@ -33,19 +33,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = C:\Users\Arik\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7223.86\bin\cmake\win\bin\cmake.exe
+CMAKE_COMMAND = C:\Users\User\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7846.88\bin\cmake\win\bin\cmake.exe
 
 # The command to remove a file.
-RM = C:\Users\Arik\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7223.86\bin\cmake\win\bin\cmake.exe -E remove -f
+RM = C:\Users\User\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7846.88\bin\cmake\win\bin\cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = F:\Technion\mivne\HW2
+CMAKE_SOURCE_DIR = "C:\Users\User\Technion\semester_4\Data Structures 1\HW\Wet2"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = F:\Technion\mivne\HW2\cmake-build-debug
+CMAKE_BINARY_DIR = "C:\Users\User\Technion\semester_4\Data Structures 1\HW\Wet2\cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Wet2.dir/depend.make
@@ -58,60 +58,30 @@ include CMakeFiles/Wet2.dir/flags.make
 
 CMakeFiles/Wet2.dir/main.cpp.obj: CMakeFiles/Wet2.dir/flags.make
 CMakeFiles/Wet2.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Technion\mivne\HW2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Wet2.dir/main.cpp.obj"
-	F:\minGW\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Wet2.dir\main.cpp.obj -c F:\Technion\mivne\HW2\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\User\Technion\semester_4\Data Structures 1\HW\Wet2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Wet2.dir/main.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Wet2.dir\main.cpp.obj -c "C:\Users\User\Technion\semester_4\Data Structures 1\HW\Wet2\main.cpp"
 
 CMakeFiles/Wet2.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Wet2.dir/main.cpp.i"
-	F:\minGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\Technion\mivne\HW2\main.cpp > CMakeFiles\Wet2.dir\main.cpp.i
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\User\Technion\semester_4\Data Structures 1\HW\Wet2\main.cpp" > CMakeFiles\Wet2.dir\main.cpp.i
 
 CMakeFiles/Wet2.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Wet2.dir/main.cpp.s"
-	F:\minGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\Technion\mivne\HW2\main.cpp -o CMakeFiles\Wet2.dir\main.cpp.s
-
-CMakeFiles/Wet2.dir/library2.cpp.obj: CMakeFiles/Wet2.dir/flags.make
-CMakeFiles/Wet2.dir/library2.cpp.obj: ../library2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Technion\mivne\HW2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Wet2.dir/library2.cpp.obj"
-	F:\minGW\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Wet2.dir\library2.cpp.obj -c F:\Technion\mivne\HW2\library2.cpp
-
-CMakeFiles/Wet2.dir/library2.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Wet2.dir/library2.cpp.i"
-	F:\minGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\Technion\mivne\HW2\library2.cpp > CMakeFiles\Wet2.dir\library2.cpp.i
-
-CMakeFiles/Wet2.dir/library2.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Wet2.dir/library2.cpp.s"
-	F:\minGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\Technion\mivne\HW2\library2.cpp -o CMakeFiles\Wet2.dir\library2.cpp.s
-
-CMakeFiles/Wet2.dir/MusicManager.cpp.obj: CMakeFiles/Wet2.dir/flags.make
-CMakeFiles/Wet2.dir/MusicManager.cpp.obj: ../MusicManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Technion\mivne\HW2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Wet2.dir/MusicManager.cpp.obj"
-	F:\minGW\mingw32\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Wet2.dir\MusicManager.cpp.obj -c F:\Technion\mivne\HW2\MusicManager.cpp
-
-CMakeFiles/Wet2.dir/MusicManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Wet2.dir/MusicManager.cpp.i"
-	F:\minGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\Technion\mivne\HW2\MusicManager.cpp > CMakeFiles\Wet2.dir\MusicManager.cpp.i
-
-CMakeFiles/Wet2.dir/MusicManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Wet2.dir/MusicManager.cpp.s"
-	F:\minGW\mingw32\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\Technion\mivne\HW2\MusicManager.cpp -o CMakeFiles\Wet2.dir\MusicManager.cpp.s
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\User\Technion\semester_4\Data Structures 1\HW\Wet2\main.cpp" -o CMakeFiles\Wet2.dir\main.cpp.s
 
 # Object files for target Wet2
 Wet2_OBJECTS = \
-"CMakeFiles/Wet2.dir/main.cpp.obj" \
-"CMakeFiles/Wet2.dir/library2.cpp.obj" \
-"CMakeFiles/Wet2.dir/MusicManager.cpp.obj"
+"CMakeFiles/Wet2.dir/main.cpp.obj"
 
 # External object files for target Wet2
 Wet2_EXTERNAL_OBJECTS =
 
 Wet2.exe: CMakeFiles/Wet2.dir/main.cpp.obj
-Wet2.exe: CMakeFiles/Wet2.dir/library2.cpp.obj
-Wet2.exe: CMakeFiles/Wet2.dir/MusicManager.cpp.obj
 Wet2.exe: CMakeFiles/Wet2.dir/build.make
 Wet2.exe: CMakeFiles/Wet2.dir/linklibs.rsp
 Wet2.exe: CMakeFiles/Wet2.dir/objects1.rsp
 Wet2.exe: CMakeFiles/Wet2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=F:\Technion\mivne\HW2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Wet2.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\User\Technion\semester_4\Data Structures 1\HW\Wet2\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Wet2.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Wet2.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -124,6 +94,6 @@ CMakeFiles/Wet2.dir/clean:
 .PHONY : CMakeFiles/Wet2.dir/clean
 
 CMakeFiles/Wet2.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" F:\Technion\mivne\HW2 F:\Technion\mivne\HW2 F:\Technion\mivne\HW2\cmake-build-debug F:\Technion\mivne\HW2\cmake-build-debug F:\Technion\mivne\HW2\cmake-build-debug\CMakeFiles\Wet2.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\User\Technion\semester_4\Data Structures 1\HW\Wet2" "C:\Users\User\Technion\semester_4\Data Structures 1\HW\Wet2" "C:\Users\User\Technion\semester_4\Data Structures 1\HW\Wet2\cmake-build-debug" "C:\Users\User\Technion\semester_4\Data Structures 1\HW\Wet2\cmake-build-debug" "C:\Users\User\Technion\semester_4\Data Structures 1\HW\Wet2\cmake-build-debug\CMakeFiles\Wet2.dir\DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/Wet2.dir/depend
 

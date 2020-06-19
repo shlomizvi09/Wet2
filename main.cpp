@@ -3,10 +3,17 @@
 
 int main() {
   AVLRankTree<int, int> *new_tree = new AVLRankTree<int, int>();
-  for (int i = 1; i < 8957; ++i) {
+  int m = 20;
+  for (int i = 1; i < m; ++i) {
     new_tree->add(i, i);
   }
-  int rank = new_tree->getRank(1504);
+  TreeNode<int, int> *tree_node = nullptr;
+  std::cout << "the ranks are:\n";
+  for (int i = 1; i < m; ++i) {
+    std::cout << "key: ";
+    tree_node = new_tree->getNodeByRank(i, new_tree->getRoot());
+    std::cout << tree_node->getKey() << "\n";
+  }
   new_tree->cleanTree(new_tree->getRoot());
   delete new_tree;
   return 0;
