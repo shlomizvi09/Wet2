@@ -1,5 +1,6 @@
 #include <iostream>
-#include "AVLRankTree.h"
+#include "library2.h"
+#include "MusicManager.h"
 
 int main() {
   AVLRankTree<int, int> *new_tree = new AVLRankTree<int, int>();
@@ -16,5 +17,9 @@ int main() {
   }
   new_tree->cleanTree(new_tree->getRoot());
   delete new_tree;
+  void *music_manager = Init();
+  MusicManager *ds = (MusicManager*)music_manager;
+  AddArtist(music_manager,111);
+
   return 0;
 }

@@ -14,3 +14,22 @@ void *Init() {
         return nullptr;
     }
 }
+
+StatusType AddArtist(void *DS, int artistID) {
+    if (DS == nullptr || artistID <= 0)
+        return INVALID_INPUT;
+    MusicManager *ds = (MusicManager *) DS;
+    MusicManagerResult tmpResult;
+    try {
+        tmpResult = ds->AddArtist(artistID);
+    } catch (std::bad_alloc &e) {
+        return ALLOCATION_ERROR;
+    }
+    if (tmpResult == MM_EXISTS)
+        return FAILURE;
+    if(tmpResult==MM_SUCCESS)
+        return SUCCESS;
+    return FAILURE;
+}
+
+

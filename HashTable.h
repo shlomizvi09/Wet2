@@ -5,7 +5,7 @@
 #ifndef WET2_HASHTABLE_H
 #define WET2_HASHTABLE_H
 
-#include "AVLTree.h"
+#include "AVLRankTree.h"
 
 typedef enum HashTableResult {
     HASH_SUCCESS,
@@ -13,22 +13,6 @@ typedef enum HashTableResult {
     HASH_ALREADY_EXIST,
     HASH_DONT_EXIST,
 } HashTableResult;
-
-template<class Key, class Data>
-void DeleteTreeData(TreeNode<Key, Data> *root) {
-    if (root == nullptr)
-        return;
-    DeleteTreeData(root->getRightSon());
-    DeleteTreeData(root->getLeftSon());
-    delete root->getData();
-}
-
-int Hash(int x, int size) {
-    return x % size;
-}
-
-
-
 
 template<class Key, class Data>
 class HashTable {
@@ -52,12 +36,24 @@ public:
         delete [] trees;
     }
 
+    int HashFunc(int x, int size) {
+        return x % size;
+    }
+
+    void DeleteTreeData(TreeNode<Key, Data> *root) {
+        if (root == nullptr)
+            return;
+        DeleteTreeData(root->getRightSon());
+        DeleteTreeData(root->getLeftSon());
+        delete root->getData();
+    }
+
 
     HashTableResult search(int x) {
-        int tmp_cell = Hash(x, array_size);
+        int tmp_cell = HashFunc(x, array_size);
         AVLRankTree<Key, Data> *tmp_tree = trees[tmp_cell];
         TreeNode<Key, Data> *tmp_node= nullptr;
-        AVLTreeResult tmp_result = AVL_KeyNotFound;
+        AVLRankTreeResult tmp_result = AVL_KeyNotFound;
         tmp_result=trees[tmp_cell]->searchNode(x,&tmp_node);
         if(tmp_result==AVL_SUCCESS)
             return HASH_ALREADY_EXIST;
@@ -69,7 +65,7 @@ public:
         tmp_result=search(x);
         if(tmp_result==HASH_ALREADY_EXIST)
             return HASH_ALREADY_EXIST;
-        int tmp_cell = Hash(x, array_size);
+        int tmp_cell = HashFunc(x, array_size);
         trees[tmp_cell]->add(x,data);
         size++;
         if(size>=array_size)
@@ -82,7 +78,7 @@ public:
         tmp_result=search(x);
         if(tmp_result==HASH_DONT_EXIST)
             return HASH_DONT_EXIST;
-        int tmp_cell = Hash(x, array_size);
+        int tmp_cell = HashFunc(x, array_size);
         trees[tmp_cell]->remove(x);
         size--;
         if(size<array_size/4 && array_size>11)
@@ -98,6 +94,7 @@ public:
         for (int i = 0; i <array_size ; ++i) {
             CopyTree(trees[i]->getRoot(),new_tree,new_size);
             trees[i]->cleanTree(trees[i]->getRoot());
+            delete trees[i];
         }
         delete [] this->trees;
         this->trees=new_tree;
@@ -117,7 +114,7 @@ public:
             return;
         CopyTree(root->getLeftSon(), new_table, new_size);
         CopyTree(root->getRightSon(), new_table, new_size);
-        int tmp_cell = Hash(root->getKey(),new_size);
+        int tmp_cell = HashFunc(root->getKey(), new_size);
         new_table[tmp_cell]->add(root->getKey(), root->getData());
     }
 };

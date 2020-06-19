@@ -6,8 +6,7 @@
 #define WET2_MUSICMANAGER_H
 
 #include "HashTable.h"
-#include "AVLTree.h"
-#include "AVLRankTree.h"
+
 #include "library2.h"
 
 typedef enum MusicManagerResult {
@@ -30,9 +29,13 @@ class FirstTreeNodeData {
     AVLRankTree<SecondTreeNodeData, SecondTreeNodeData *> *tree;
 
 public:
-    FirstTreeNodeData() : tree(nullptr){};
+    FirstTreeNodeData() {
+        tree = new AVLRankTree<SecondTreeNodeData, SecondTreeNodeData *>();
+    };
 
-    ~FirstTreeNodeData() = default;
+    ~FirstTreeNodeData(){
+        delete tree;
+    };
 
     AVLRankTree<SecondTreeNodeData, SecondTreeNodeData *> getData() {
         return *tree;
@@ -120,6 +123,8 @@ public:
         delete table;
         delete deg_tree;
     }
+
+    MusicManagerResult AddArtist(int artistID);
 
 
 };
