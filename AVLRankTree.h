@@ -807,7 +807,7 @@ int AVLRankTree<Key, Data>::getRank(Key key) {
 template<class Key, class Data>
 TreeNode<Key, Data> *AVLRankTree<Key, Data>::getNodeByRank(int rank,
                                                            TreeNode<Key, Data> *tree_node) {
-  if (rank <= 0 || tree_node == nullptr) { // illegal rank or nullptr
+  if (rank <= 0 || tree_node == nullptr || rank > this->size) { // illegal rank or nullptr
     return nullptr;
   }
   int left_son_subnodes = tree_node->leftSon == nullptr ? 0 : tree_node->leftSon->num_of_subnodes;

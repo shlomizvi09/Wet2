@@ -4,16 +4,23 @@
 
 int main() {
   AVLRankTree<int, int> *new_tree = new AVLRankTree<int, int>();
-  int m = 20;
-  for (int i = 1; i < m; ++i) {
-    new_tree->add(i, i);
+  int nums[] = {1, 5, 6, 7, 9, 13, 15, 22, 23, 40};
+  for (int i = 0; i < 10; ++i) {
+    new_tree->add(nums[i], nums[i]);
   }
   TreeNode<int, int> *tree_node = nullptr;
-  std::cout << "the ranks are:\n";
-  for (int i = 1; i < m; ++i) {
-    std::cout << "key: ";
+  int i = 0;
+  int m = 1000 * sizeof(nums) / sizeof(nums[0]);
+  while (m > 0) {
+    std::cin >> i;
     tree_node = new_tree->getNodeByRank(i, new_tree->getRoot());
-    std::cout << tree_node->getKey() << "\n";
+    if (tree_node == nullptr) {
+      std::cout << "error. no such rank.\n";
+      continue;
+    }
+    std::cout << "key: " << tree_node->getKey();
+    std::cout << " ,rank: " << i << "\n";
+    m--;
   }
   new_tree->cleanTree(new_tree->getRoot());
   delete new_tree;
