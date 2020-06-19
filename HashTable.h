@@ -74,7 +74,7 @@ class HashTable {
   HashTableResult remove(int x) {
     HashTableResult tmp_result = HASH_FAILURE;
     TreeNode<Key, Data> *temp_tree_node = nullptr;
-    tmp_result = search(x, temp_tree_node);
+    tmp_result = search(x, &temp_tree_node);
     if (tmp_result == HASH_DONT_EXIST)
       return HASH_DONT_EXIST;
     int tmp_cell = HashFunc(x, array_size);

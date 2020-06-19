@@ -139,6 +139,9 @@ class MusicManager {
 
   MusicManagerResult AddArtist(int artistID);
 
+  MusicManagerResult RemoveArtist(int artistID);
+
+
 };
 
 #endif //WET2_MUSICMANAGER_H

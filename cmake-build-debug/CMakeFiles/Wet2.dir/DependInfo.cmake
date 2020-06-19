@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/User/Technion/semester_4/Data Structures 1/HW/Wet2/MusicManager.cpp" "C:/Users/User/Technion/semester_4/Data Structures 1/HW/Wet2/cmake-build-debug/CMakeFiles/Wet2.dir/MusicManager.cpp.obj"
-  "C:/Users/User/Technion/semester_4/Data Structures 1/HW/Wet2/library2.cpp" "C:/Users/User/Technion/semester_4/Data Structures 1/HW/Wet2/cmake-build-debug/CMakeFiles/Wet2.dir/library2.cpp.obj"
-  "C:/Users/User/Technion/semester_4/Data Structures 1/HW/Wet2/main.cpp" "C:/Users/User/Technion/semester_4/Data Structures 1/HW/Wet2/cmake-build-debug/CMakeFiles/Wet2.dir/main.cpp.obj"
+  "F:/Technion/mivne/HW2/MusicManager.cpp" "F:/Technion/mivne/HW2/cmake-build-debug/CMakeFiles/Wet2.dir/MusicManager.cpp.obj"
+  "F:/Technion/mivne/HW2/library2.cpp" "F:/Technion/mivne/HW2/cmake-build-debug/CMakeFiles/Wet2.dir/library2.cpp.obj"
+  "F:/Technion/mivne/HW2/main.cpp" "F:/Technion/mivne/HW2/cmake-build-debug/CMakeFiles/Wet2.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

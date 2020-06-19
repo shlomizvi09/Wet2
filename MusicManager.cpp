@@ -19,16 +19,20 @@ MusicManagerResult MusicManager::AddArtist(int artistID) {
 
 MusicManagerResult MusicManager::RemoveArtist(int artistID) {
     TreeNode<int, FirstTreeNodeData *> *tmp_node = nullptr;
-    HashTableResult tmp_result = HASH_FAILURE;
-    tmp_result = table->search(artistID, &tmp_node);
-    if (tmp_result == HASH_DONT_EXIST)
+    HashTableResult tmp_result = table->search(artistID,&tmp_node);
+    if(tmp_result==HASH_DONT_EXIST)
         return MM_NOT_EXISTS;
-    if (tmp_node->getData()->getData().getSize() != 0)
+    if (!(tmp_node->getData()->getAuxTree()->isEmpty()))
         return MM_FAIL;
+    delete tmp_node->getData()->getAuxTree();
+    delete tmp_node->getData()->getTree();
     delete tmp_node->getData();
     tmp_result = table->remove(artistID);
-    if (tmp_result == HASH_SUCCESS)
+    if(tmp_result==HASH_SUCCESS)
         return MM_SUCCESS;
     return MM_FAIL;
+
+
+
 }
 
