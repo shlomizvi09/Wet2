@@ -107,6 +107,10 @@ class ThirdTreeNodeData {
     return songID;
   }
 
+    bool operator==(ThirdTreeNodeData other) const {
+        return (this->plays == other.plays && this->singerID == other.singerID
+                && this->songID == other.songID);
+    }
   void addToPlays(int count) {
     this->plays += count;
   }
@@ -143,6 +147,23 @@ class MusicManager {
   }
 
   MusicManagerResult AddArtist(int artistID);
+
+    MusicManagerResult RemoveArtist(int artistID);
+
+    MusicManagerResult AddSong(int artistID, int songID);
+
+    MusicManagerResult RemoveSong(int artistID, int songID);
+
+    void DeleteMM();
+
+    void DeleteDegTreeData(TreeNode<ThirdTreeNodeData,ThirdTreeNodeData*> *root);
+
+    void DeleteSingerTreeData(TreeNode<SecondTreeNodeData, SecondTreeNodeData *> *root);
+
+    void DeleteSingerAuxTreeData(TreeNode<int, SecondTreeNodeData *> *root);
+
+    void PatrolSingersTree(TreeNode<int, FirstTreeNodeData *> *root);
+
 
   MusicManagerResult AddToSongCount(int artistID, int songID, int count);
 
