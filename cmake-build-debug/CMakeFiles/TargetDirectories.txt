@@ -1,3 +1,3 @@
-F:/Technion/mivne/HW2/cmake-build-debug/CMakeFiles/Wet2.dir
-F:/Technion/mivne/HW2/cmake-build-debug/CMakeFiles/edit_cache.dir
-F:/Technion/mivne/HW2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/User/Technion/semester_4/Data Structures 1/HW/Wet2/cmake-build-debug/CMakeFiles/Wet2.dir
+C:/Users/User/Technion/semester_4/Data Structures 1/HW/Wet2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/User/Technion/semester_4/Data Structures 1/HW/Wet2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
