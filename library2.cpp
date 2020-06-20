@@ -94,7 +94,6 @@ StatusType AddToSongCount(void *DS, int artistID, int songID, int count) {
     return SUCCESS;
 }
 
-
 void Quit(void **DS) {
     MusicManager *ds = (MusicManager *) *DS;
     ds->DeleteMM();

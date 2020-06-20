@@ -43,12 +43,15 @@ int main() {
         AddToSongCount(music_manager,rand() % 1000,rand() % 1000,rand() % 10);
     }
 
-    for (int l = 0; l < 2000; ++l) {
-        //RemoveSong(music_manager,rand() % 1000,rand() % 1000);
-        for (int i = 0; i < 2000; ++i) {
-            AddToSongCount(music_manager,l,i,rand() % 100);
-
+    for (int l = 0; l < 1900; ++l) {
+        for (int i = 0; i <1600 ; ++i) {
+            RemoveSong(music_manager,l,i);
         }
+
+    }
+
+    for (int k = 0; k < 920; ++k) {
+        RemoveArtist(music_manager, k);
     }
 
     Quit(&music_manager);

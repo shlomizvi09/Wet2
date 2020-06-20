@@ -190,7 +190,6 @@ public:
 
     void PatrolSingersTree(TreeNode<int, FirstTreeNodeData *> *root);
 
-
     MusicManagerResult AddToSongCount(int artistID, int songID, int count);
 
 };
