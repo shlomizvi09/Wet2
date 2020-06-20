@@ -675,7 +675,7 @@ void AVLRankTree<Key, Data>::updateSmallest() {
  */
 
 template<class Key, class Data>
-AVLRankTree<Key, Data>::AVLRankTree():root(nullptr), size(0), smallest(nullptr) {}
+AVLRankTree<Key, Data>::AVLRankTree():root(nullptr),  smallest(nullptr), size(0) {}
 
 template<class Key, class Data>
 AVLRankTree<Key, Data>::~AVLRankTree() {
@@ -694,7 +694,7 @@ AVLRankTreeResult AVLRankTree<Key, Data>::add(Key key, Data data) {
     this->updateSmallest();
     return AVL_SUCCESS;
   }
-  int old_root_subnodes = this->root->num_of_subnodes;
+  //int old_root_subnodes = this->root->num_of_subnodes;
   if (internalAdd(&(this->root), tree_node) == AVL_KeyAlreadyExists) {
     delete tree_node;
     return AVL_KeyAlreadyExists;
