@@ -243,6 +243,8 @@ class AVLRankTree {
 
   void print(AVLRankTreeOrderKind print_order) const;
 
+  TreeNode<Key, Data> *updateSmallestAux();
+
   TreeNode<Key, Data> *getSmallest();
 
   TreeNode<Key, Data> *getRoot();
@@ -667,7 +669,7 @@ void AVLRankTree<Key, Data>::updateRank(TreeNode<Key, Data> *tree_node) {
 
 template<class Key, class Data>
 void AVLRankTree<Key, Data>::updateSmallest() {
-  this->smallest = this->getSmallest();
+  this->smallest = this->updateSmallestAux();
 }
 
 /*
@@ -762,7 +764,7 @@ void AVLRankTree<Key, Data>::print(AVLRankTreeOrderKind print_order) const {
 }
 
 template<class Key, class Data>
-TreeNode<Key, Data> *AVLRankTree<Key, Data>::getSmallest() {
+TreeNode<Key, Data> *AVLRankTree<Key, Data>::updateSmallestAux() {
   if (this->root == nullptr) {
     return nullptr;
   }
@@ -771,6 +773,11 @@ TreeNode<Key, Data> *AVLRankTree<Key, Data>::getSmallest() {
     tree_node = tree_node->leftSon;
   }
   return tree_node;
+}
+
+template<class Key, class Data>
+TreeNode<Key, Data> *AVLRankTree<Key, Data>::getSmallest() {
+    return this->smallest;
 }
 
 template<class Key, class Data>

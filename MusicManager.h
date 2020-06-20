@@ -27,8 +27,8 @@ class SecondTreeNodeData;
 class ThirdTreeNodeData;
 
 class FirstTreeNodeData {
-  AVLRankTree<SecondTreeNodeData, SecondTreeNodeData *> *tree;
-  AVLRankTree<int, SecondTreeNodeData *> *aux_tree;
+  AVLRankTree<SecondTreeNodeData, SecondTreeNodeData *> *tree; // Second type song tree //
+  AVLRankTree<int, SecondTreeNodeData *> *aux_tree;            // Second type aux song tree //
 
  public:
   FirstTreeNodeData() {
