@@ -1,4 +1,4 @@
-C:\Users\Arik\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7223.86\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" F:\Technion\mivne\HW2
+C:\Users\User\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7846.88\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "C:\Users\User\Technion\semester_4\Data Structures 1\HW\Wet2"
 -- Configuring done
 -- Generating done
--- Build files have been written to: F:/Technion/mivne/HW2/cmake-build-debug
+-- Build files have been written to: C:/Users/User/Technion/semester_4/Data Structures 1/HW/Wet2/cmake-build-debug

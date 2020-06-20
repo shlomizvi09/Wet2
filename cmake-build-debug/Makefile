@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = C:\Users\Arik\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7223.86\bin\cmake\win\bin\cmake.exe
+CMAKE_COMMAND = C:\Users\User\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7846.88\bin\cmake\win\bin\cmake.exe
 
 # The command to remove a file.
-RM = C:\Users\Arik\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7223.86\bin\cmake\win\bin\cmake.exe -E remove -f
+RM = C:\Users\User\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7846.88\bin\cmake\win\bin\cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = F:\Technion\mivne\HW2
+CMAKE_SOURCE_DIR = "C:\Users\User\Technion\semester_4\Data Structures 1\HW\Wet2"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = F:\Technion\mivne\HW2\cmake-build-debug
+CMAKE_BINARY_DIR = "C:\Users\User\Technion\semester_4\Data Structures 1\HW\Wet2\cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = F:\Technion\mivne\HW2\cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	C:\Users\Arik\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7223.86\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available."
+	C:\Users\User\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7846.88\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	C:\Users\Arik\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7223.86\bin\cmake\win\bin\cmake.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	C:\Users\User\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\201.7846.88\bin\cmake\win\bin\cmake.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start F:\Technion\mivne\HW2\cmake-build-debug\CMakeFiles F:\Technion\mivne\HW2\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\User\Technion\semester_4\Data Structures 1\HW\Wet2\cmake-build-debug\CMakeFiles" "C:\Users\User\Technion\semester_4\Data Structures 1\HW\Wet2\cmake-build-debug\CMakeFiles\progress.marks"
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start F:\Technion\mivne\HW2\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\User\Technion\semester_4\Data Structures 1\HW\Wet2\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -176,32 +176,32 @@ library2.cpp.s:
 	$(MAKE) -f CMakeFiles\Wet2.dir\build.make CMakeFiles/Wet2.dir/library2.cpp.s
 .PHONY : library2.cpp.s
 
-main.obj: main.cpp.obj
+main2.obj: main2.cpp.obj
 
-.PHONY : main.obj
+.PHONY : main2.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) -f CMakeFiles\Wet2.dir\build.make CMakeFiles/Wet2.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+main2.cpp.obj:
+	$(MAKE) -f CMakeFiles\Wet2.dir\build.make CMakeFiles/Wet2.dir/main2.cpp.obj
+.PHONY : main2.cpp.obj
 
-main.i: main.cpp.i
+main2.i: main2.cpp.i
 
-.PHONY : main.i
+.PHONY : main2.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles\Wet2.dir\build.make CMakeFiles/Wet2.dir/main.cpp.i
-.PHONY : main.cpp.i
+main2.cpp.i:
+	$(MAKE) -f CMakeFiles\Wet2.dir\build.make CMakeFiles/Wet2.dir/main2.cpp.i
+.PHONY : main2.cpp.i
 
-main.s: main.cpp.s
+main2.s: main2.cpp.s
 
-.PHONY : main.s
+.PHONY : main2.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles\Wet2.dir\build.make CMakeFiles/Wet2.dir/main.cpp.s
-.PHONY : main.cpp.s
+main2.cpp.s:
+	$(MAKE) -f CMakeFiles\Wet2.dir\build.make CMakeFiles/Wet2.dir/main2.cpp.s
+.PHONY : main2.cpp.s
 
 # Help Target
 help:
@@ -218,9 +218,9 @@ help:
 	@echo ... library2.obj
 	@echo ... library2.i
 	@echo ... library2.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... main2.obj
+	@echo ... main2.i
+	@echo ... main2.s
 .PHONY : help
 
 
