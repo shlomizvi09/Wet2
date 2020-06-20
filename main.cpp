@@ -1,9 +1,10 @@
 #include <iostream>
 #include "library2.h"
 #include "MusicManager.h"
+#include <stdlib.h>
 
 int main() {
-  AVLRankTree<int, int> *new_tree = new AVLRankTree<int, int>();
+/*  AVLRankTree<int, int> *new_tree = new AVLRankTree<int, int>();
   int nums[] = {1, 5, 6, 7, 9, 13, 15, 22, 23, 40};
   for (int i = 0; i < 10; ++i) {
     new_tree->add(nums[i], nums[i]);
@@ -23,10 +24,35 @@ int main() {
     m--;
   }
   new_tree->cleanTree(new_tree->getRoot());
-  delete new_tree;
-  void *music_manager = Init();
-  MusicManager *ds = (MusicManager*)music_manager;
-  AddArtist(music_manager,111);
+  delete new_tree; */
+    void *music_manager = Init();
+    MusicManager *ds = (MusicManager *) music_manager;
+    for (int i = 0; i < 1110; ++i) {
+        AddArtist(music_manager, rand() % 1000);
+    }
 
-  return 0;
+    for (int j = 0; j < 1000; ++j) {
+        AddSong(music_manager, rand() % 1000, rand() % 1000);
+    }
+
+    for (int k = 0; k < 1000; ++k) {
+        RemoveArtist(music_manager, rand() % 1000);
+    }
+
+    for (int m = 0; m < 10000; ++m) {
+        AddToSongCount(music_manager,rand() % 1000,rand() % 1000,rand() % 10);
+    }
+
+    for (int l = 0; l < 2000; ++l) {
+        //RemoveSong(music_manager,rand() % 1000,rand() % 1000);
+        for (int i = 0; i < 2000; ++i) {
+            AddToSongCount(music_manager,l,i,rand() % 100);
+
+        }
+    }
+
+    Quit(&music_manager);
+
+
+    return 0;
 }

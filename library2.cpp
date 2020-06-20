@@ -77,6 +77,24 @@ StatusType RemoveSong(void *DS, int artistID, int songID) {
     return SUCCESS;
 }
 
+StatusType AddToSongCount(void *DS, int artistID, int songID, int count) {
+    if (DS == nullptr)
+        return INVALID_INPUT;
+    MusicManager *ds = (MusicManager *) DS;
+    MusicManagerResult tmpResult;
+    try {
+        tmpResult = ds->AddToSongCount(artistID, songID, count);
+    } catch (std::bad_alloc &e) {
+        return ALLOCATION_ERROR;
+    }
+    if (tmpResult == MM_NOT_EXISTS || tmpResult == MM_FAIL)
+        return FAILURE;
+    if (tmpResult == MM_INVALID_INPUT)
+        return INVALID_INPUT;
+    return SUCCESS;
+}
+
+
 void Quit(void **DS) {
     MusicManager *ds = (MusicManager *) *DS;
     ds->DeleteMM();
