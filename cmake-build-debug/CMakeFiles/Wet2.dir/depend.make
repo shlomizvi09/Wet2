@@ -13,9 +13,6 @@ CMakeFiles/Wet2.dir/library2.cpp.obj: ../MusicManager.h
 CMakeFiles/Wet2.dir/library2.cpp.obj: ../library2.cpp
 CMakeFiles/Wet2.dir/library2.cpp.obj: ../library2.h
 
-CMakeFiles/Wet2.dir/main.cpp.obj: ../AVLRankTree.h
-CMakeFiles/Wet2.dir/main.cpp.obj: ../HashTable.h
-CMakeFiles/Wet2.dir/main.cpp.obj: ../MusicManager.h
-CMakeFiles/Wet2.dir/main.cpp.obj: ../library2.h
-CMakeFiles/Wet2.dir/main.cpp.obj: ../main.cpp
+CMakeFiles/Wet2.dir/main2.cpp.obj: ../library2.h
+CMakeFiles/Wet2.dir/main2.cpp.obj: ../main2.cpp
 
